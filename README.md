@@ -1,4 +1,4 @@
-# dcdr-research
+# dcdr research API
 The code repository and API docs for DCDR Research users
 
 **DRAFT - these documents currently refer to the test version of the endpoint.**
