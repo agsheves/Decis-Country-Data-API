@@ -1,4 +1,4 @@
-# Decisi Intelligence Country Info API
+# Decis Intelligence Country Info API
 The code repository and API docs for Decis users
 
 **DRAFT - these documents currently refer to the test version of the endpoint.**
