@@ -1,11 +1,11 @@
-# dcdr research API
-The code repository and API docs for DCDR Research users
+# Decisi Intelligence Country Info API
+The code repository and API docs for Decis users
 
 **DRAFT - these documents currently refer to the test version of the endpoint.**
 
 # Overview of the API
 
-The DCDR research API allows authorized users to access the DCDR research database to access up-to-date country news, intelligence, and analysis for use in their own products. Access to the API endpoint is via **HTTPS POST request** initiated by the user and requires valid credentials for access. The request is normally made on a per-country basis. The API call output is in JSON format and the structure of the output is explained below.
+The Decis research API allows authorized users to access the Decis research database to access up-to-date country news, intelligence, and analysis for use in their own products. Access to the API endpoint is via **HTTPS POST request** initiated by the user and requires valid credentials for access. The request is normally made on a per-country basis. The API call output is in JSON format and the structure of the output is explained below.
 
 # Authentication
 
@@ -13,13 +13,13 @@ Users require a valid user ID and key to access the API. These credentials are u
 
 ## Request access
 
-[Email me to request access](mailto:andrew@dcdr.io) 
+[Email me to request access](mailto:andrew@decis.ai) 
 
 **Ensure that you include details of your organization and potential use case**
 
 # Endpoint
 
-The endpoint address is ```https://dcdr-testbed.anvil.app/_/api/countrydata```
+The endpoint address is ```https://countryassessments.anvil.app/_/api/countrydata-test-closed```
 
 The endpoint can be accessed as follows.
 
@@ -29,14 +29,14 @@ The endpoint can be accessed as follows.
 import requests
 
 def get_country_data(email, api_key):
-    url = 'https://dcdr-testbed.anvil.app/_/api/countrydata'
+    url = 'https://countryassessments.anvil.app/_/api/countrydata-test-closed'
     response = requests.get(url, auth=(email, api_key))
 ```
 
 ## CURL
 
 ```
-$ curl -u me@example.com:api_key https://dcdr-testbed.anvil.app/_/api/countrydata
+$ curl -u me@example.com:api_key https://dcdr-testbed.anvil.app/_/api/countrydata-test-closed
 
 (Replace 'me@example.com' with your registered username and 'api_key' with your personal DCDR API key)
 ```
