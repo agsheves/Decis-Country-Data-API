@@ -5,7 +5,9 @@ The code repository and API docs for Decis users
 
 # Overview of the API
 
-The Decis research API allows authorized users to access the Decis research database to access up-to-date country news, intelligence, and analysis for use in their own products. Access to the API endpoint is via **HTTPS POST request** initiated by the user and requires valid credentials for access. The request is normally made on a per-country basis. The API call output is in JSON format and the structure of the output is explained below.
+The Decis research API allows authorized users to access the Decis research database to access up-to-date country news, intelligence, and analysis for use in their own products. Access to the API endpoint is via **HTTPS GET request** initiated by the user and requires valid credentials for access. 
+
+The request is made on a per-country basis or configured based on the client's credentials. The API call output is in JSON format, explained in detail below.
 
 # Authentication
 
