@@ -15,7 +15,7 @@ Users require a valid user ID and key to access the API. These credentials are u
 
 ## Request access
 
-[Email me to request access](mailto:andrew@decis.ai) 
+[Email us to request access](mailto:support@decis.ai) include ```API Key Request``` in the subject
 
 **Ensure that you include details of your organization and potential use case**
 
@@ -33,14 +33,20 @@ import requests
 def get_country_data(email, api_key):
     url = 'https://countryassessments.anvil.app/_/api/countrydata-test-closed'
     response = requests.get(url, auth=(email, api_key))
+    
+    if response.status_code == 200:
+        return response.json()  # Assuming the response is in JSON format
+    else:
+        return f"Error: {response.status_code} - {response.text}"
+
 ```
 
 ## CURL
 
 ```
-$ curl -u me@example.com:api_key https://dcdr-testbed.anvil.app/_/api/countrydata-test-closed
+$ curl -u me@example.com:my_api_key https://dcdr-testbed.anvil.app/_/api/countrydata-test-closed
 
-(Replace 'me@example.com' with your registered username and 'api_key' with your personal DCDR API key)
+(Replace 'me@example.com' with your registered username and 'my_api_key' with your personal Decis API key
 ```
 
 
@@ -51,7 +57,7 @@ Results from the API are presented in JSON with the following fields.
 | ------------------------------------ | --------------------- | ----------- |
 | `country_name`                       | text                  | The ISO standard name for the country. |
 | `country_summary`                    | text                  | An aggregated summary of the country from multiple sources, presented as a single paragraph of text. |
-| `raw_sentiment_statement`            | text                  | An assessment of the baseline stability rating using the DCDR ratings (see below for more). |
+| `baseline_assessment`            | text                  | An assessment of the baseline stability rating using the DCDR ratings (see below for more). |
 | `custom_rating`                      | text                  | An assessment of the baseline stability rating using the user's custom ratings (see below for more). This is only returned where a custom rating system has been established, otherwise this is skipped. |
 | `latest72hrAssessmentDate`           | datetime string       | The date and time of the last 72-hour assessment, returned as a full datetime string including timezone in ISO 8601 format. |
 | `latest_directional_assessment`      | text                  | An assessment of the comparative stability for the country at the moment using the Decis ratings (see below for more). |
@@ -78,8 +84,12 @@ DCDR stability ratings are based on a five-step structure based on an assessment
 
 ## Custom Rating Terms
 
-Users can request custom ratings that align with this system. These custom results are linked to a particular user or team. THese are only included in responses to requests submitted with the appropriate credentials otherwise, these are skipped and only the standard DCDR ratings are returned.
-The conditions that generate the custom ratings should closely align with the conditions used in the DCDR ratings as the custom terms are a terminology change, while the underlying methodology remains the same.
+Users can request custom ratings that align with this system. These custom results are linked to a particular user or team and are only included in responses to requests submitted with the appropriate credentials. Otherwise, these are skipped, and only the standard DCDR ratings are returned.
+Note that custom terms are a terminology change only: the underlying Decisi methodology remains the same. Therefore, custom ratings are unavailable when terminologies cannot be aligned.
+
+## Questions
+
+Please [email support](mailto:support@decis.ai) with any questions
 
 
 
