@@ -85,7 +85,7 @@ DCDR stability ratings are based on a five-step structure based on an assessment
 ## Custom Rating Terms
 
 Users can request custom ratings that align with this system. These custom results are linked to a particular user or team and are only included in responses to requests submitted with the appropriate credentials. Otherwise, these are skipped, and only the standard DCDR ratings are returned.
-Note that custom terms are a terminology change only: the underlying Decisi methodology remains the same. Therefore, custom ratings are unavailable when terminologies cannot be aligned.
+Note that custom terms are a terminology change only: the underlying Decis methodology remains the same. Therefore, custom ratings are unavailable when terminologies cannot be aligned.
 
 ## Questions
 
