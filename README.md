@@ -44,7 +44,7 @@ def get_country_data(email, api_key):
 ## CURL
 
 ```
-$ curl -u me@example.com:my_api_key https://dcdr-testbed.anvil.app/_/api/countrydata-test-closed
+$ curl -u me@example.com:my_api_key https://coiuntryassessments.anvil.app/_/api/countrydata-test-closed
 
 (Replace 'me@example.com' with your registered username and 'my_api_key' with your personal Decis API key
 ```
@@ -62,7 +62,7 @@ Results from the API are presented in JSON with the following fields. (Items mar
 | `baseline_assessment` *              | text                  | An assessment of the baseline stability rating using the DCDR ratings (see below for more). |
 | `custom_rating`                      | text                  | An assessment of the baseline stability rating using the user's custom ratings (see below for more). This is only returned where a custom rating system has been established, otherwise this is skipped. |
 | `latest72hrAssessmentDate`           | datetime string       | The date and time of the last 72-hour assessment, returned as a full datetime string including timezone in ISO 8601 format. |
-| `latest_directional_assessment` *    | text                  | An assessment of the comparative stability for the country at the moment using the Decis ratings (see below for more). |
+| `latest_directional_assessment` *    | text                  | An assessment of the comparative stability for the country at the moment compared to the baseline  ratings (see below for more). |
 | `short_term_assessment_period`       | text                  | The 72-hour assessment span in text format (e.g., "This assessment covers the period 12-15 February 2024"). |
 | `last_midterm_assessment_date`       | date string           | The date of the last mid-term (30-90 day) assessment as a simple date string in ISO 8601 format (e.g., "2024-02-15"). |
 | `latest_news`                        | text                  | A summary of the latest events in text form without links or sources. |
@@ -71,9 +71,9 @@ Results from the API are presented in JSON with the following fields. (Items mar
 
 # Ratings and Customization
 
-## DCDR Standard Ratings
+## Decis Standard Ratings
 
-DCDR stability ratings are based on a five-step structure based on an assessment of a location using 350+ stability pairs.
+Decis stability ratings are based on a five-step structure based on an assessment of a location using 350+ stability pairs.
 
 | Rating term | Description|
 | ------------ | ---------- |
