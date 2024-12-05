@@ -51,17 +51,18 @@ $ curl -u me@example.com:my_api_key https://dcdr-testbed.anvil.app/_/api/country
 
 
 # Response Structure
-Results from the API are presented in JSON with the following fields.
+Results from the API are presented in JSON with the following fields. (Items marked with an * are provides in the test API.)
 
 | Field                                | Format                | Description |
 | ------------------------------------ | --------------------- | ----------- |
-|`country_ref_code`    |    text    | The ISO-3 reference for the country sourced from the [CountryInfo python library (link leaves this page)](https://pypi.org/project/countryinfo/target=blank). This is the best key to use for accurate and consistent country identification.      |
-| `country_name`                       | text                  | The ISO standard name for the country. |
+|`country_ref_code`                    |    text                | The ISO-3 reference for the country sourced from the [CountryInfo python library](https://pypi.org/project/countryinfo/target=blank) (link leaves this page). This is the best key to use for accurate and consistent country identification.      |
+| `country_name` *                      | text                  | The ISO standard name for the country.  |
+|`flag` *                               | text (unicode emoji) | Emoji version of the country's flag. |
 | `country_summary`                    | text                  | An aggregated summary of the country from multiple sources, presented as a single paragraph of text. |
-| `baseline_assessment`            | text                  | An assessment of the baseline stability rating using the DCDR ratings (see below for more). |
+| `baseline_assessment` *              | text                  | An assessment of the baseline stability rating using the DCDR ratings (see below for more). |
 | `custom_rating`                      | text                  | An assessment of the baseline stability rating using the user's custom ratings (see below for more). This is only returned where a custom rating system has been established, otherwise this is skipped. |
 | `latest72hrAssessmentDate`           | datetime string       | The date and time of the last 72-hour assessment, returned as a full datetime string including timezone in ISO 8601 format. |
-| `latest_directional_assessment`      | text                  | An assessment of the comparative stability for the country at the moment using the Decis ratings (see below for more). |
+| `latest_directional_assessment` *    | text                  | An assessment of the comparative stability for the country at the moment using the Decis ratings (see below for more). |
 | `short_term_assessment_period`       | text                  | The 72-hour assessment span in text format (e.g., "This assessment covers the period 12-15 February 2024"). |
 | `last_midterm_assessment_date`       | date string           | The date of the last mid-term (30-90 day) assessment as a simple date string in ISO 8601 format (e.g., "2024-02-15"). |
 | `latest_news`                        | text                  | A summary of the latest events in text form without links or sources. |
