@@ -55,6 +55,7 @@ Results from the API are presented in JSON with the following fields.
 
 | Field                                | Format                | Description |
 | ------------------------------------ | --------------------- | ----------- |
+|`country_ref_code`    |    text    | The ISO-3 reference for the country sourced from the [CountryInfo python library (link leaves this page)](https://pypi.org/project/countryinfo/target=blank). This is the best key to use for accurate and consistent country identification.      |
 | `country_name`                       | text                  | The ISO standard name for the country. |
 | `country_summary`                    | text                  | An aggregated summary of the country from multiple sources, presented as a single paragraph of text. |
 | `baseline_assessment`            | text                  | An assessment of the baseline stability rating using the DCDR ratings (see below for more). |
