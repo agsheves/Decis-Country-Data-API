@@ -44,7 +44,7 @@ def get_country_data(email, api_key):
 ## CURL
 
 ```
-$ curl -u me@example.com:my_api_key https://coiuntryassessments.anvil.app/_/api/countrydata-test-closed
+$ curl -u me@example.com:my_api_key https://countryassessments.anvil.app/_/api/countrydata-test-closed
 
 (Replace 'me@example.com' with your registered username and 'my_api_key' with your personal Decis API key
 ```
