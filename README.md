@@ -35,7 +35,7 @@ def get_country_data(email, api_key):
     response = requests.get(url, auth=(email, api_key))
     
     if response.status_code == 200:
-        return response.json()  # Assuming the response is in JSON format
+        return response.json()
     else:
         return f"Error: {response.status_code} - {response.text}"
 
@@ -51,7 +51,7 @@ $ curl -u me@example.com:my_api_key https://countryassessments.anvil.app/_/api/c
 
 
 # Response Structure
-Results from the API are presented in JSON with the following fields. (Items marked with an * are provides in the test API.)
+Results from the API are presented in JSON with the following fields. (Items marked with an * are provided in the test API.)
 
 | Field                                | Format                | Description |
 | ------------------------------------ | --------------------- | ----------- |
@@ -78,7 +78,7 @@ Decis stability ratings are based on a five-step structure based on an assessmen
 | Rating term | Description|
 | ------------ | ---------- |
 | Very Stable | Indicates a country where there are very high levels of rule of law, income, education, social harmony and environmental stability  |
-| Stable | Indicates a country where there are levels of rule of law, income, education, social harmony and environmental stability are still high but there are some areas of tension or limitations |
+| Stable | Indicates a country where there are high levels of rule of law, income, education, social harmony and environmental stability but there are some areas of tension or limitations |
 | Weak | Indicates a country where there are significant areas of shortfall or tension and societal cohesion is under strain | 
 | Unstable | Many of the necessary foundations of a functioning society have or are breaking down. Often accompanied by areas or regions where civil unrest or conflict are breaking out.  | 
 | Very Unstable | Widespread breakdown of societal support structures and cohesion. Often accompanied by widespread civil unrest or conflict.| 
