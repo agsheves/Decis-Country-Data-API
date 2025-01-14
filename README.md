@@ -59,7 +59,7 @@ Results from the API are presented in JSON with the following fields. (Items mar
 | `country_name` *                      | text                  | The ISO standard name for the country.  |
 |`flag` *                               | text (unicode emoji) | Emoji version of the country's flag. |
 | `country_summary`                    | text                  | An aggregated summary of the country from multiple sources, presented as a single paragraph of text. |
-| `baseline_assessment` *              | text                  | An assessment of the baseline stability rating using the DCDR ratings (see below for more). |
+| `baseline_assessment` *              | text                  | An assessment of the baseline stability rating using the Decis ratings (see below for more). |
 | `custom_rating`                      | text                  | An assessment of the baseline stability rating using the user's custom ratings (see below for more). This is only returned where a custom rating system has been established, otherwise this is skipped. |
 | `latest72hrAssessmentDate`           | datetime string       | The date and time of the last 72-hour assessment, returned as a full datetime string including timezone in ISO 8601 format. |
 | `latest_directional_assessment` *    | text                  | An assessment of the comparative stability for the country at the moment compared to the baseline  ratings (see below for more). |
@@ -86,7 +86,7 @@ Decis stability ratings are based on a five-step structure based on an assessmen
 
 ## Custom Rating Terms
 
-Users can request custom ratings that align with this system. These custom results are linked to a particular user or team and are only included in responses to requests submitted with the appropriate credentials. Otherwise, these are skipped, and only the standard DCDR ratings are returned.
+Users can request custom ratings that align with this system. These custom results are linked to a particular user or team and are only included in responses to requests submitted with the appropriate credentials. Otherwise, these are skipped, and only the standard Decis ratings are returned.
 Note that custom terms are a terminology change only: the underlying Decis methodology remains the same. Therefore, custom ratings are unavailable when terminologies cannot be aligned.
 
 ## Questions
