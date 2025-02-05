@@ -93,15 +93,7 @@ Note that custom terms are a terminology change only: the underlying Decis metho
 
 Please [email support](mailto:support@decis.ai) with any questions
 
-## What's under the hood?
 
-<a href="https://groq.com" target="_blank" rel="noopener noreferrer">
-  <img
-    src="https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg"
-    alt="Powered by Groq for fast inference."
-    style="width: 25%"
-  />
-</a>
 
 
 
