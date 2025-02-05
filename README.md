@@ -13,13 +13,15 @@ The request is made on a per-country basis or configured based on the client's c
 
 Users require a valid user ID and key to access the API. These credentials are unique to the named user and are not to be shared. Teams can have multiple users, but each must use their own set of credentials. Each access attempt is logged, tracking the supplied username and the originating IP address. Users who appear to be sharing their credentials may lose access to the API.
 
+Most clients will use the access credentials (```email & password```) they use for the Decis API Dashboard. If you have been provided with a separate ```api_key```, use this for authentication
+
 ## Request access
 
 [Email us to request access](mailto:support@decis.ai) include ```API Key Request``` in the subject
 
 **Ensure that you include details of your organization and potential use case**
 
-# Endpoint
+# Endpoint Access
 
 The endpoint address is ```https://countryassessments.anvil.app/_/api/countrydata-test-closed```
 
@@ -40,13 +42,61 @@ def get_country_data(email, api_key):
         return f"Error: {response.status_code} - {response.text}"
 
 ```
+## Google Sheets
+
+You can access the data in Google Sheets.
+
+* Create the workbook you want to send the data to
+* Click ```Extensions / AppScripts``` to create a new AppScript
+* Delete any code and paste the code below.
+* Add the log-in credentials you use to access the app page in line 6.
+* Save the AppScript and click ```run``` to test. The country info will populate the first tab of the worksheet.
+
+```
+function getDecisCountryData() {
+  var url = "https://decis-api.anvil.app/_/api/countrydata";
+  var options = {
+    "method": "get",
+    "headers": {
+      "Authorization": "Basic " + Utilities.base64Encode("you@your.email:your_passWord"), // <--- Add credentials here
+      "format": "CSV"
+    },
+    "muteHttpExceptions": true
+  };
+
+  var response = UrlFetchApp.fetch(url, options);
+  var code = response.getResponseCode();
+  var data = response.getContentText();
+  
+  // Log the response code and data for debugging
+  Logger.log(code);
+  Logger.log(data);
+  
+  if (code == 200 && data) {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    sheet.clear();  // Clear old data
+    
+    // Parse the CSV into a 2D array
+    var csvData = Utilities.parseCsv(data); 
+    
+    // Insert the parsed data into the sheet starting from the top-left cell
+    sheet.getRange(1, 1, csvData.length, csvData[0].length).setValues(csvData);  // Populate sheet with CSV data
+  } else {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    sheet.clear();
+    sheet.getRange(1, 1).setValue("Error: " + code + " - " + response.getContentText());
+    Logger.log("Error fetching data: " + code + " - " + response.getContentText());
+    return; // Stop execution if there's an error
+  }
+}
+```
 
 ## CURL
 
 ```
-$ curl -u me@example.com:my_api_key https://countryassessments.anvil.app/_/api/countrydata-test-closed
+$ curl -u me@example.com:your_passWord https://countryassessments.anvil.app/_/api/countrydata-test-closed
 
-(Replace 'me@example.com' with your registered username and 'my_api_key' with your personal Decis API key
+(Replace 'me@example.com' with your registered username and 'your_passWord' with your personal Decis API key
 ```
 
 
@@ -68,6 +118,16 @@ Results from the API are presented in JSON with the following fields. (Items mar
 | `latest_news`                        | text                  | A summary of the latest events in text form without links or sources. |
 | `mid_term_events`                    | text                  | A summary of upcoming events that were used to conduct the mid-term analysis. |
 | `mid_term_assessment`                | text                  | An assessment of the assessed stability for the upcoming 30-90 day period using the Decis ratings (see below for more). |
+
+# Response Codes
+
+The following codes are returned in the response
+| Response Code     | Message             | Meaning                  |
+|-------------------|---------------------|--------------------------|
+| `200`               | JSON or CSV payload returned | API accessed successfully |
+| `401`                | `"error": "User not found"`    | The user credentials are not recognized |
+| `429`               | `"error": "API call limit reached"`| The user has used all available credits for that billing period |
+
 
 # Ratings and Customization
 
