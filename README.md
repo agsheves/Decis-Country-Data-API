@@ -47,10 +47,10 @@ def get_country_data(email, api_key):
 You can access the data in Google Sheets by pasting a short code snippet into your sheet.
 
 * Create the workbook you want to send the data to
-* Click ```Extensions / AppScripts``` to create a new AppScript
+* Click `Extensions / AppScripts` to create a new AppScript
 * Delete any code and paste the code below.
 * Add the log-in credentials you use to access the app page in line 6.
-* Save the AppScript and click ```run``` to test. The country info will populate the first tab of the worksheet.
+* Click `Save` then `run` to save and test the connection. The country info will populate the first tab of the worksheet. If there is an error, please refer to the `Response Codes` section below. 
 
 ```
 function getDecisCountryData() {
