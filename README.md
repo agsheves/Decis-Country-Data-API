@@ -44,7 +44,7 @@ def get_country_data(email, api_key):
 ```
 ## Google Sheets
 
-You can access the data in Google Sheets.
+You can access the data in Google Sheets by pasting a short code snippet into your sheet.
 
 * Create the workbook you want to send the data to
 * Click ```Extensions / AppScripts``` to create a new AppScript
