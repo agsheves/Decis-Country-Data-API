@@ -96,8 +96,8 @@ function getDecisCountryData() {
 ```
 $ curl -u me@example.com:your_passWord https://countryassessments.anvil.app/_/api/countrydata-test-closed
 
-(Replace 'me@example.com' with your registered username and 'your_passWord' with your personal Decis API key
 ```
+Replace 'me@example.com' with your registered username and 'your_passWord' with your personal Decis API key.
 
 
 # Response Structure
