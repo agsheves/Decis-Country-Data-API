@@ -23,7 +23,7 @@ Most clients will use the access credentials (```email & password```) they use f
 
 # Endpoint Access
 
-The endpoint address is ```https://countryassessments.anvil.app/_/api/countrydata-test-closed```
+The endpoint address is ```https://api.decis.ai/_/api/countrydata```
 
 The endpoint can be accessed as follows.
 
@@ -33,7 +33,7 @@ The endpoint can be accessed as follows.
 import requests
 
 def get_country_data(email, api_key):
-    url = 'https://countryassessments.anvil.app/_/api/countrydata-test-closed'
+    url = 'https://api.decis.ai/_/api/countrydata'
     response = requests.get(url, auth=(email, api_key))
     
     if response.status_code == 200:
@@ -94,7 +94,7 @@ function getDecisCountryData() {
 ## CURL
 
 ```
-$ curl -u me@example.com:your_passWord https://countryassessments.anvil.app/_/api/countrydata-test-closed
+$ curl -u me@example.com:your_passWord https://api.decis.ai/_/api/countrydata
 
 ```
 Replace 'me@example.com' with your registered username and 'your_passWord' with your personal Decis API key.
