@@ -1,8 +1,6 @@
 # Decis Intelligence Country Info API
 The code repository and API docs for Decis users
 
-### [Check System Status](https://stats.uptimerobot.com/fT5HCuNVVc)
-
 **DRAFT - these documents currently refer to the test version of the endpoint.**
 
 # Overview of the API
