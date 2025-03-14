@@ -131,22 +131,33 @@ The following codes are returned in the response
 
 # Ratings and Customization
 
-## Decis Standard Ratings
+## Decis Stability Ratings
 
-Decis stability ratings are based on a five-step structure based on an assessment of a location using 350+ stability pairs.
+Decis stability ratings are based on a five-step structure based on an assessment of events in a location and how these correspond to 350+ stability markers. These markers are based on country stability ratings used for 15+ years in the assessment of country threat conditions and are based on observable events. These ratings are reviewed and updated weekly.
 
 | Rating term | Description|
 | ------------ | ---------- |
 | Very Stable | Indicates a country where there are very high levels of rule of law, income, education, social harmony and environmental stability  |
 | Stable | Indicates a country where there are high levels of rule of law, income, education, social harmony and environmental stability but there are some areas of tension or limitations |
 | Weak | Indicates a country where there are significant areas of shortfall or tension and societal cohesion is under strain | 
-| Unstable | Many of the necessary foundations of a functioning society have or are breaking down. Often accompanied by areas or regions where civil unrest or conflict are breaking out.  | 
-| Very Unstable | Widespread breakdown of societal support structures and cohesion. Often accompanied by widespread civil unrest or conflict.| 
+| Unstable | Many of the necessary foundations of a functioning society have or are close to breaking down. Civil unrest or conflict are likely or breaking out in some locations.  | 
+| Very Unstable | Widespread breakdown of societal support structures and cohesion. Consistent with widespread civil unrest, conflict, or a prolonged environmental disaster.| 
 
+## Directional Assessment
+
+The assessment engine continually reviews current events over the previous 72-hour period and compares the current conditions with the baseline stability rating to return an assessment of:
+
+- Consistent with the baseline
+- More turbulent than normal
+- More calm than normal
+
+These ratings are updated every 48 hours.
+
+Note: the system is very sensitive to periods of turbulence and there may be extended periods where the directional assessment is 'more turbulent' but the baseline rating is not downgraded. This is due to that sensitivity and the need for there to be an across-the-board deterioration for a country to be downgraded.
 
 ## Custom Rating Terms
 
-Users can request custom ratings that align with this system. These custom results are linked to a particular user or team and are only included in responses to requests submitted with the appropriate credentials. Otherwise, these are skipped, and only the standard Decis ratings are returned.
+Subscribers can request reporting using custom stability or threat ratings. These custom results are linked to a particular user or team and are only included in responses to requests submitted with the appropriate credentials. Otherwise, only the standard Decis ratings are returned.
 Note that custom terms are a terminology change only: the underlying Decis methodology remains the same. Therefore, custom ratings are unavailable when terminologies cannot be aligned.
 
 ## Questions
