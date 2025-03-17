@@ -105,7 +105,7 @@ Results from the API are presented in JSON with the following fields. (Items mar
 
 | Field                                | Format                | Description |
 | ------------------------------------ | --------------------- | ----------- |
-|`country_ref_code`                    |    text                | The ISO-3 reference for the country sourced from the [CountryInfo python library](https://pypi.org/project/countryinfo/target=blank) (link leaves this page). This is the best key to use for accurate and consistent country identification.      |
+|`iso3`                    |    text                | The ISO-3 reference for the country sourced from the [CountryInfo python library](https://pypi.org/project/countryinfo/target=blank) (link leaves this page). This is the best key to use for accurate and consistent country identification.      |
 | `country_name` *                      | text                  | The ISO standard name for the country.  |
 |`flag` *                               | text (unicode emoji) | Emoji version of the country's flag. |
 | `country_summary`                    | text                  | An aggregated summary of the country from multiple sources, presented as a single paragraph of text. |
