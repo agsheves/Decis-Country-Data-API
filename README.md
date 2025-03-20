@@ -147,9 +147,9 @@ Decis stability ratings are based on a five-step structure based on an assessmen
 
 The assessment engine continually reviews current events over the previous 72-hour period and compares the current conditions with the baseline stability rating to return an assessment of:
 
-- Consistent with the baseline
-- More turbulent than normal
-- More calm than normal
+- consistent with the baseline assessment
+- more calm than usual
+- more turbulent than usual
 
 These ratings are updated every 48 hours.
 
