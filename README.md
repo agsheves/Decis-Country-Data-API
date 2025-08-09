@@ -32,9 +32,9 @@ The endpoint can be accessed as follows.
 ```
 import requests
 
-def get_country_data(email, api_key):
+def get_country_data(email, password):
     url = 'https://api.decis.ai/_/api/countrydata'
-    response = requests.get(url, auth=(email, api_key))
+    response = requests.get(url, auth=(email, password))
     
     if response.status_code == 200:
         return response.json()
