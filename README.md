@@ -11,9 +11,9 @@ The request is made on a per-country basis or configured based on the client's c
 
 # Authentication
 
-Users require a valid user ID and key to access the API. These credentials are unique to the named user and are not to be shared. Teams can have multiple users, but each must use their own set of credentials. Each access attempt is logged, tracking the supplied username and the originating IP address. Users who appear to be sharing their credentials may lose access to the API.
+Users require a valid user ID and password to access the API. These credentials are unique to the named user and are not to be shared. Teams can have multiple users, but each must use their own set of credentials. Each access attempt is logged, tracking the supplied username and the originating IP address. Users who appear to be sharing their credentials may lose access to the API.
 
-Most clients will use the access credentials (```email & password```) they use for the Decis API Dashboard. If you have been provided with a separate ```api_key```, use this for authentication
+Most clients will use the access credentials (```email & password```) they use for the Decis API Dashboard. If you have been provided with a separate ```api_key```, use this for authentication (does not apply to most users).
 
 ## Request access
 
@@ -97,11 +97,11 @@ function getDecisCountryData() {
 $ curl -u me@example.com:your_passWord https://api.decis.ai/_/api/countrydata
 
 ```
-Replace 'me@example.com' with your registered username and 'your_passWord' with your personal Decis API key.
+Replace 'me@example.com' with your registered username and 'your_passWord' with your Decis login information.
 
 
 # Response Structure
-Results from the API are presented in JSON with the following fields. (Items marked with an * are provided in the test API.)
+Results from the API are presented in JSON with the following fields available. (Items marked with an * are provided in the test API.)
 
 | Field                                | Format                | Description |
 | ------------------------------------ | --------------------- | ----------- |
