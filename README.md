@@ -1,15 +1,13 @@
 # Decis Intelligence Country Info API
 The code repository and API docs for Decis users
 
-*NOTE* - these documents refer to the test version of the **agent** endpoint. The **country information** endpoint is better suited for routine and bulk country data access. [That endpoint is explained here](https://github.com/agsheves/Decis-Country-Data-API/tree/main)
+*NOTE* - these documents refer to the test version of the **agent** endpoint. The **country information** endpoint is better suited for routine and bulk country data access. [That endpoint is explained here](https://github.com/agsheves/Decis-Country-Data-API)
 
 # Overview of the API
 
-The Decis research API allows authorized users to access the Decis research database to access up-to-date country news, intelligence, and analysis for use in their own products. Access to the API endpoint is via **HTTPS GET request** initiated by the user and requires valid credentials for access. 
+The Decis agent API allows authorized users to access the Decis agent workspace programmatically to make use of the Decis agents in stand-alone applications or via other AI tools. Access to the API endpoint is via **HTTPS GET request** initiated by the user and requires [valid workspace credentials](https://workspace.decis.ai/) for access. 
 
-The request is made on a per-country basis or configured based on the client's credentials. The API call output is in JSON format, explained in detail below.
-
-# Decis Intelligence Agent API - Complete Usage Guide
+# Decis  Agent API - Complete Usage Guide
 
 ## Overview
 
@@ -19,7 +17,9 @@ The Decis Agent API provides access to multiple specialized AI agents for intell
 
 ### 1. Initialize a Session
 
-First, create an authenticated session to get your session credentials:
+First, create an authenticated session to get your session credentials.
+
+# ⚠️ This uses your [WORKSPACE credentials](https://workspace.decis.ai/). Do not use your [country endpoint credentials]()
 
 ```python
 import requests
@@ -28,7 +28,6 @@ import requests
 session_url = "https://workspace.decis.ai/_/api/sessionInit"
 auth_response = requests.get(session_url, auth=('your-email@domain.com', 'your-password'))
 
-# ⚠️ These are your WORKSPACE credentials. Do not use your country endpoint credentials
 
 if auth_response.status_code == 200:
     session_data = auth_response.json()
