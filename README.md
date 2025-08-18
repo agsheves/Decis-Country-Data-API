@@ -1,7 +1,7 @@
 # Decis Intelligence Country Info API
 The code repository and API docs for Decis users
 
-**DRAFT - these documents currently refer to the test version of the endpoint.**
+*NOTE* - these documents refer to the test version of the **agent** endpoint. The **country information** endpoint is better suited for routine and bulk country data access. [That endpoint is explained here](https://github.com/agsheves/Decis-Country-Data-API/tree/main)
 
 # Overview of the API
 
@@ -13,7 +13,7 @@ The request is made on a per-country basis or configured based on the client's c
 
 Users require a valid user ID and password to access the API. These credentials are unique to the named user and are not to be shared. Teams can have multiple users, but each must use their own set of credentials. Each access attempt is logged, tracking the supplied username and the originating IP address. Users who appear to be sharing their credentials may lose access to the API.
 
-Most clients will use the access credentials (```email & password```) they use for the Decis API Dashboard. If you have been provided with a separate ```api_key```, use this for authentication (does not apply to most users).
+Most clients will use the access credentials (```email & password```) they use for the **Decis workspace**. These are separate from the credentials used for the **country endpoin.** If you have been provided with a separate ```api_key```, use this for authentication (does not apply to most users).
 
 ## Request access
 
