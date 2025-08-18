@@ -13,7 +13,11 @@ The request is made on a per-country basis or configured based on the client's c
 
 Users require a valid user ID and password to access the API. These credentials are unique to the named user and are not to be shared. Teams can have multiple users, but each must use their own set of credentials. Each access attempt is logged, tracking the supplied username and the originating IP address. Users who appear to be sharing their credentials may lose access to the API.
 
-Most clients will use the access credentials (```email & password```) they use for the **Decis workspace**. These are separate from the credentials used for the **country endpoin.** If you have been provided with a separate ```api_key```, use this for authentication (does not apply to most users).
+Most clients will use the access credentials (```email & password```) they use for the **Decis workspace**. 
+
+⚠️ These are separate from the credentials used for the **country endpoint.** 
+
+If you have been provided with a separate ```api_key```, use this for authentication (does not apply to most users).
 
 ## Request access
 
